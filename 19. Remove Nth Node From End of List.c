@@ -1,11 +1,20 @@
 /**
+Detail: Use two pointer , p1 is N after p2, when p2 move to the end , p1 is the last N node
+*/
+
+
+/**
+Note: Creat a tag node and point to head for the case :
+List:[1] N:1
+*/
+
+/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     struct ListNode *next;
  * };
  */
-
 
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     struct ListNode* p1 = NULL;
@@ -34,6 +43,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     }
     
     p1->next = p1->next->next;
+	free(tag);
     return tag->next;
 }
 
